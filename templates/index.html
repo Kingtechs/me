@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <section class="hero-intro">
+    <img src="{{ url_for('static', filename='uploads/oscar.jpg') }}" alt="Oscar Reyes Umanzor" class="hero-photo">
+    <h1 class="hero-title">Welcome to My Portfolio</h1>
+    <p class="hero-tagline">This site highlights my projects, certifications, and technical journey.</p>
+  </section>
+
+  <p>
+    I am an IT professional specializing in cybersecurity, systems administration, and
+    data analytics. I hold CompTIA Network+ and Security+ certifications,
+    demonstrating my ability to manage, secure, and optimize networked environments. My experience includes hardware and
+    software troubleshooting, network configuration, and implementing security best practices to protect data and infrastructure.
+    I have a profound interest in technology and a dedication to solving complex problems—anything that runs on batteries, I want
+    to understand how it operates.
+  </p>
+  <div class="hero">
+    <article class="highlights">
+     <h3><center>Plans For The Future<center></h3> 
+      <p>
+        Advance in the technology field by applying skills in system security, network management, and data analysis to support
+        organizational growth and resilience. I am passionate about solving complex problems, strengthening system defenses, and
+        contributing to secure, efficient IT operations.
+      </p>
+    </article>
+
+      
+    </article>
+  </div>
+</section>
+<h2> </h2>
+<section class="card">
+  <h2><center>Skills</h2>
+  <div class="table-wrap">
+    <table class="nice-table">
+      <thead>
+        
+      </thead>
+      <tbody>
+      <tr><td>Network Configuration & VLAN Management</td><td>Virtual Lab</td></tr>
+        <tr><td>Firewall Setup & Intrusion Monitoring pfSense</td><td>Virtual Lab</td></tr>
+        <tr><td>Data Analysis & Dashboard Visualization SQL & Power BI</td><td>Tech Survey Metrics Dashboard</td></tr>
+        <tr><td>Web Development HTML, CSS, JavaScript</td><td>Creating WebSites</td></tr>
+        <tr><td>Systems Virtualization & Administration </td><td>Home Server Project</td></tr>
+        <tr><td>Cloud Deployment & Remote Access AWS & Tailscale</td><td>Cloud Lab Project</td></tr>
+        
+        <h2> </h2>
+      </tbody>
+    </table>
+  </div>
+</section>
+<h2> </h2>
+<section class="grid grid-3">
+  <article class="card">
+    <h3>Network</h3>
+    <div class="tagbar">
+      <span class="tag">pfSense</span><span class="tag">VLANs</span><span class="tag">DNS/DHCP</span>
+      <span class="tag">VPN</span><span class="tag">Wireshark</span><span class="tag">NAT/ACL</span>
+    </div>
+  </article>
+  <article class="card">
+    <h3>Endpoint</h3>
+    <div class="tagbar">
+      <span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">PowerShell</span>
+      <span class="tag">Bash</span><span class="tag">Docker</span><span class="tag">VS Code</span>
+    </div>
+  </article>
+  <article class="card">
+    <h3>SIEM / Analytics</h3>
+    <div class="tagbar">
+      <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">ETL</span>
+      <span class="tag">TheHive</span><span class="tag">Shuffle SOAR</span>
+    </div>
+  </article>
+</section>
+<h2> </h2>
+<section class="card">
+  <h2>Certifications</h2>
+  <div class="tagbar">
+    <span class="tag accent">CompTIA Network+</span>
+    <span class="tag accent">CompTIA Security+</span>
+    <span class="tag ghost">CySA+ (in progress)</span>
+  </div>
+</section>
+
+<section>
+  <h2>Featured Projects</h2>
+  <div class="grid">
+    {% for p in projects %}
+      <article class="card">
+        <h3>{{ p.name }}</h3>
+        <p>{{ p.description }}</p>
+        <div class="tagbar">
+          {% for tag in p.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+        </div>
+        {% if p.link %}<a class="btn small" href="{{ p.link }}" target="_blank" rel="noopener">Open</a>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section>
+  
+  <div class="stack">
+    {% for post in posts %}
+      
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

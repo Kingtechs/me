@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Contact {% endblock %}
+
+{% block content %}
+<section class="contact-hero card">
+  <h1>Let’s Connect</h1>
+  <p>
+    I’m always open to connecting with other IT professionals, sharing ideas, or discussing new opportunities.
+    <br>Feel free to reach out through any of the following:
+  </p>
+
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/oscar-reyes-311a6336b/" target="_blank" class="social linkedin">LinkedIn</a>
+    <a href="https://github.com/Kingtechs" target="_blank" class="social github">GitHub</a>
+    <a href="mailto:okings27@gmail.com" class="social email">Email</a>
+  </div>
+</section>
+
+<section class="card contact-form">
+  <h2>Have a question or want to connect?</h2>
+  <p>Drop me a message anytime.</p>
+  <form onsubmit="event.preventDefault(); alert('Message captured! In production, connect this form to a mail service or backend API.');">
+    <label>Name <input type="text" required></label>
+    <label>Email <input type="email" required></label>
+    <label>Message <textarea rows="5" required></textarea></label>
+    <button class="btn" type="submit">Send Message</button>
+  </form>
+</section>
+{% endblock %}

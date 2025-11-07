@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1a2440"/>
+      <stop offset="1" stop-color="#0b1021"/>
+    </linearGradient>
+    <pattern id="p" width="200" height="200" patternUnits="userSpaceOnUse">
+      <rect width="200" height="200" fill="none"/>
+      <!-- grid -->
+      <path d="M0 0H200 M0 40H200 M0 80H200 M0 120H200 M0 160H200
+               M0 0V200 M40 0V200 M80 0V200 M120 0V200 M160 0V200"
+            stroke="#2a355a" stroke-width="1"/>
+      <!-- circuits -->
+      <g stroke="#5aa5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+        <path d="M20 30h60v40h40v40"/>
+        <circle cx="20" cy="30" r="3" fill="#5aa5ff"/>
+        <circle cx="120" cy="110" r="3" fill="#5aa5ff"/>
+        <path d="M160 20v60h-40v40"/>
+        <circle cx="160" cy="20" r="3" fill="#5aa5ff"/>
+        <circle cx="120" cy="120" r="3" fill="#5aa5ff"/>
+        <path d="M30 170h60v-30h30"/>
+        <circle cx="30" cy="170" r="3" fill="#5aa5ff"/>
+        <circle cx="120" cy="140" r="3" fill="#5aa5ff"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g)"/>
+  <rect width="100%" height="100%" fill="url(#p)" opacity="0.35"/>
+</svg>

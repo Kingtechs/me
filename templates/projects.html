@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Projects {% endblock %}
+
+{% block content %}
+<h1>Projects</h1>
+<p class="muted">My work across cybersecurity, networking, web, and data.</p>
+
+<!-- Filter bar -->
+<div class="filterbar card">
+  <button class="fbtn active" data-filter="*">All</button>
+  <button class="fbtn" data-filter="Security">Security</button>
+  <button class="fbtn" data-filter="Networking">Networking</button>
+  <button class="fbtn" data-filter="Data">Data</button>
+  <button class="fbtn" data-filter="Power BI">Power BI</button>
+  <button class="fbtn" data-filter="Web">Web</button>
+  <button class="fbtn" data-filter="SOAR">SOAR</button>
+  <button class="fbtn" data-filter="Cisco">Cisco</button>
+</div>
+
+<!-- Gallery -->
+<div id="projGrid" class="proj-grid">
+  {% for p in projects %}
+  <article class="proj-card" data-tags="{{ p.tags | join(',') }}">
+    {% if p.cover %}
+      <img class="proj-cover" src="{{ p.cover }}" alt="{{ p.name }} cover">
+    {% endif %}
+    <div class="proj-body">
+      <h3 class="proj-title">{{ p.name }}</h3>
+      <p class="proj-desc">{{ p.description }}</p>
+      <div class="tagbar">
+        {% for tag in p.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <div class="proj-actions">
+        {% if p.link %}
+          <a class="btn small" href="{{ p.link }}" target="_blank" rel="noopener">Open</a>
+        {% endif %}
+        
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

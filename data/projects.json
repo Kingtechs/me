@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Proxmox Virtual Lab",
+    "description": "Homelab built with Proxmox, VLANs, pfSense, and Tailscale for enterprise style testing and system administration practice.",
+    "tags": ["Homelab", "Networking", "Security", "Virtualization"],
+    "link": "",
+    "cover": "/static/uploads/proxmox.jpg"
+  },
+  {
+    "name": "Data Professional Survey Metrics Dashboard",
+    "description": "SQL → Power BI pipeline tracking survey responses, focusing on visualization, DAX metrics, and data cleaning.",
+    "tags": ["Data", "Power BI", "Visualization", "ETL"],
+    "link": "",
+    "cover": "/static/uploads/powerbi-survey.jpg"
+  },
+  {
+    "name": "SOC Automation Lab",
+    "description": "Alert triage and enrichment flows using Shuffle SOAR and TheHive for automated response and incident documentation.",
+    "tags": ["Security", "SOAR", "Automation", "TheHive"],
+    "link": "",
+    "cover": "/static/uploads/soc-automation.jpg"
+  },
+  {
+    "name": "Web Portfolio",
+    "description": "Responsive GitHub Pages site with HTML, CSS, and JavaScript; custom dark theme sections; experimenting with .NET and C#.",
+    "tags": ["Web", "Frontend", "Design", "GitHub Pages"],
+    "link": "",
+    "cover": "/static/uploads/web-portfolio.jpg"
+  },
+  {
+    "name": "Packet Tracer Labs",
+    "description": "Cisco Packet Tracer projects featuring routing, VLAN segmentation, DHCP, and NAT—plus network docs and topology diagrams.",
+    "tags": ["Cisco", "Networking", "Labs"],
+    "link": "",
+    "cover": "/static/uploads/packet-tracer.jpg"
+  }
+]

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Comments {% endblock %}
+
+{% block content %}
+<section class="card comments-wrap">
+  <h1>Comments</h1>
+  <p class="muted">Say hi, share feedback, or drop an idea. Be kind and professional.</p>
+
+  {% with msgs = get_flashed_messages() %}
+    {% if msgs %}
+      <div class="flash">{% for m in msgs %}<div>{{ m }}</div>{% endfor %}</div>
+    {% endif %}
+  {% endwith %}
+
+  <form class="comment-form" method="post" action="{{ url_for('comments') }}">
+    <label>
+      Name
+      <input type="text" name="name" placeholder="Your name" required>
+    </label>
+
+    <label>
+      Message
+      <textarea name="message" rows="4" placeholder="What’s on your mind?" required></textarea>
+    </label>
+
+    <!-- honeypot -->
+    <input type="text" name="website" autocomplete="off" tabindex="-1" class="hp">
+
+    <button class="btn" type="submit">Post Comment</button>
+  </form>
+</section>
+
+<section class="stack comments-list">
+  {% for c in comments %}
+    <article class="comment card">
+      <div class="avatar-badge">{{ (c.name or '??')[:2].upper() }}</div>
+      <div class="c-body">
+        <header class="c-meta">
+          <strong>{{ c.name }}</strong>
+          <span class="dot">•</span>
+          <time>{{ c.when }}</time>
+        </header>
+        <p class="c-text">{{ c.message }}</p>
+      </div>
+    </article>
+  {% else %}
+    <p class="muted">No comments yet. Be the first!</p>
+  {% endfor %}
+</section>
+{% endblock %}
